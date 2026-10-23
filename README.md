@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/YML87/mo-releases/releases/latest"><img src="docs/images/mo-icon.png" alt="Mo app icon" width="96"></a>
+  <img src="docs/images/mo-icon.png" alt="Mo app icon" width="96">
 </p>
 
-<h2 align="center"><a href="https://github.com/YML87/mo-releases/releases/latest">⬇ Download the latest Mo for Mac</a></h2>
+<h2 align="center">Install Mo with your AI agent</h2>
 
 <p align="center">
-  On the release page, choose the file ending in <b>.dmg</b>.<br>
+  Copy the prompt in <a href="#install-with-your-agent"><b>Install with your agent</b></a> into Claude Code, T3 or a similar agent.<br>
   <sub>APPLE SILICON (M1 OR LATER) · FOR MONŌ INTERNAL TESTERS · INSTALLERS ONLY, NO SOURCE CODE</sub>
 </p>
 
@@ -27,20 +27,9 @@ Mo is an AI work companion for your Mac. It brings **voice dictation** and **con
   <img src="docs/images/mo-states.png" alt="Mo listening, thinking, speaking and ready" width="100%">
 </p>
 
-## Install in four steps
-
-| Step | What to do |
-|---|---|
-| **1. Download** | Open the [latest release](https://github.com/YML87/mo-releases/releases/latest) and download **mo-VERSION-arm64.dmg**. |
-| **2. Drag** | Open the file and drag **Mo** onto the **Applications** folder. |
-| **3. Open** | Open Mo from Applications. This build isn't Apple-notarised yet, so the first time macOS may stop it. Go to **System Settings → Privacy & Security** and choose **Open Anyway**. |
-| **4. Allow** | When asked, allow the **Microphone**, and **Accessibility** so Mo can paste your dictated text. |
-
-> **After each update** you may need to allow Microphone and Accessibility again. That stops once Mo is signed with an Apple Developer ID.
-
 ## Install with your agent
 
-**Skip the security warning.** If you use an AI coding agent (Claude Code, T3 or similar), paste this prompt into it. The agent downloads Mo with a Terminal command, which macOS doesn't flag, checks the file's fingerprint and puts Mo in Applications. Then **you** open Mo.
+**This is the only supported way to install Mo for now.** Downloading the installer in a browser triggers a macOS security warning, because Mo isn't Apple-notarised yet. Paste this prompt into your AI coding agent (Claude Code, T3 or similar). It downloads Mo with a Terminal command, checks the file's fingerprint and puts Mo in Applications.
 
 ```text
 Install the Mo desktop app for me from https://github.com/YML87/mo-releases.
@@ -61,7 +50,14 @@ Install the Mo desktop app for me from https://github.com/YML87/mo-releases.
    Mo (not you) its Microphone and Accessibility permissions.
 ```
 
-> Mo isn't Apple-notarised yet, so this skips Apple's check rather than passing it. The fingerprint check still refuses a broken or swapped download. Use it only for Mo from this page.
+**Then:**
+
+1. Open **Mo** from Applications yourself.
+2. Allow the **Microphone**, and turn Mo on under **System Settings → Privacy & Security → Accessibility** so it can paste your dictated text.
+
+**To update Mo,** paste the same prompt again. You may need to allow Microphone and Accessibility again after each update.
+
+> This skips Apple's check rather than passing it. The fingerprint check still refuses a broken or swapped download. Use it only for Mo from this page.
 
 ## What works today
 
@@ -72,7 +68,7 @@ Install the Mo desktop app for me from https://github.com/YML87/mo-releases.
 | 🧠 **Saved context** | Chats, summaries and your confirmed decisions are saved to Mo Brain. Choose **Don't save this chat** to turn that off. |
 | 📁 **Project context** | The chat header shows the current project, open jobs and latest checkpoint from Mo Brain. These are saved records, not a live check. |
 | 🔗 **Work through T3** | Authorise Mo in your browser, pick a project and conversation, and review every message or agent request before it's sent. |
-| ⬆️ **Update check** | **Settings → System → Check for updates** looks only here, only when you click, and checks the download before opening it. You install it by hand. |
+| ⬆️ **Update check** | **Settings → System → Check for updates** tells you when a new version is out. Install it by pasting the agent prompt again. |
 
 <details>
 <summary><b>How the T3 connection works</b></summary>
@@ -99,17 +95,6 @@ Mo records its integration requests, receipts and failures, and shows the activi
 | **Screen awareness.** Help in context, with your permission | Not yet a working capability |
 | **Spoken conversation and computer actions.** Talk with Mo and let it carry out approved tasks | Not yet a working capability |
 
-<details>
-<summary><b>What are the other files on the release page?</b></summary>
-
-<br>
-
-- **mo-VERSION-arm64.zip**: the same app in a zip, used by Mo's own update check.
-- **latest-mac.yml** and **mo-release-receipt.json**: the sizes and fingerprints Mo uses to confirm a download is genuine.
-
-You only need the **.dmg**.
-
-</details>
 
 ---
 
