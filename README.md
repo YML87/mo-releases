@@ -32,7 +32,7 @@ Mo is an AI work companion for your Mac. It brings **voice dictation** and **con
 **This is the only supported way to install Mo for now.** Downloading the installer in a browser triggers a macOS security warning, because Mo isn't Apple-notarised yet. Paste this prompt into your AI coding agent (Claude Code, T3 or similar). It downloads Mo with a Terminal command, checks the file's fingerprint and puts Mo in Applications.
 
 ```text
-Install the Mo desktop app for me from https://github.com/YML87/mo-releases.
+Install (or update) the Mo desktop app for me from https://github.com/YML87/mo-releases.
 
 1. Get the latest release tag from
    https://api.github.com/repos/YML87/mo-releases/releases/latest
@@ -43,19 +43,28 @@ Install the Mo desktop app for me from https://github.com/YML87/mo-releases.
 3. Check the DMG's SHA-256 matches sha256["mo-VERSION-arm64.dmg"] in the receipt.
    If it doesn't match, stop and tell me. Don't install anything.
 4. Quit Mo if it is running. If /Applications/mo.app exists, move it to the Trash.
-5. Mount the DMG read-only (hdiutil attach -nobrowse -readonly), copy mo.app into
+5. Clear Mo's old macOS permission records, so the new version can be allowed fresh:
+   for s in Accessibility Microphone AppleEvents ScreenCapture AudioCapture; do
+     tccutil reset "$s" co.monoai.mo; done
+6. Mount the DMG read-only (hdiutil attach -nobrowse -readonly), copy mo.app into
    /Applications with ditto, then detach the DMG and delete the download folder.
-6. Confirm with: codesign --verify --deep --strict /Applications/mo.app
-7. Don't open Mo yourself. Tell me to open it from Applications, so macOS gives
-   Mo (not you) its Microphone and Accessibility permissions.
+7. Confirm with: codesign --verify --deep --strict /Applications/mo.app
+8. Don't open Mo yourself. Open the Accessibility settings for me with:
+   open "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"
+   Then tell me, step by step:
+   a. Open Mo from Applications myself (in Finder or Spotlight).
+   b. Allow the Microphone when Mo asks.
+   c. In Accessibility, switch mo on. If it isn't listed, click +, choose
+      /Applications/mo.app, and switch it on.
+   d. Quit Mo (Cmd+Q) and open it again, then try dictating.
+   e. If Mo asks to control System Events, choose Allow.
 ```
 
-**Then:**
+**Then follow your agent's steps.** In short: open Mo yourself, allow the Microphone, switch mo on under **System Settings → Privacy & Security → Accessibility**, then **quit Mo and open it again** before dictating.
 
-1. Open **Mo** from Applications yourself.
-2. Allow the **Microphone**, and turn Mo on under **System Settings → Privacy & Security → Accessibility** so it can paste your dictated text.
+**Dictation copies but doesn't paste?** Remove mo from the Accessibility list (select it, click −), add it again with +, switch it on, then quit and reopen Mo. After an update, the old entry can look switched on but no longer work.
 
-**To update Mo,** paste the same prompt again. You may need to allow Microphone and Accessibility again after each update.
+**To update Mo,** paste the same prompt again. You'll need to allow Microphone and Accessibility again after each update, until Mo is signed with an Apple Developer ID.
 
 > This skips Apple's check rather than passing it. The fingerprint check still refuses a broken or swapped download. Use it only for Mo from this page.
 
