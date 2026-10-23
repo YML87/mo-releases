@@ -1,59 +1,91 @@
-# Meet Mo
+<p align="center">
+  <img src="docs/images/mo-hero.png" alt="Meet Mo. Your work companion. Your connection to monō." width="100%">
+</p>
 
-### ⬇️ [Download the latest Mo for Mac](https://github.com/YML87/mo-releases/releases/latest)
+<p align="center">
+  <a href="https://github.com/YML87/mo-releases/releases/latest"><img src="docs/images/mo-icon.png" alt="Mo app icon" width="96"></a>
+</p>
 
-On that page, choose the file ending in **.dmg**. Apple Silicon Macs only (M1 or later).
+<h2 align="center"><a href="https://github.com/YML87/mo-releases/releases/latest">⬇ Download the latest Mo for Mac</a></h2>
 
-**Your work companion. Your connection to monō.**
+<p align="center">
+  On the release page, choose the file ending in <b>.dmg</b>.<br>
+  <sub>APPLE SILICON (M1 OR LATER) · FOR MONŌ INTERNAL TESTERS · INSTALLERS ONLY, NO SOURCE CODE</sub>
+</p>
 
-Mo is an AI work companion for your Mac. Mo Desktop brings voice dictation and conversation with monō into one app.
+---
 
-Its purpose is to reduce the effort of using your computer. Speak instead of typing. Think through work with Mo. Send approved requests to agents through T3.
+## What Mo is
 
-Mo is the companion you interact with. monō provides the AI platform behind the conversation. T3 manages the connected agent work and its conversations.
+Mo is an AI work companion for your Mac. It brings **voice dictation** and **conversation with monō** into one app, so you can speak instead of type, think your work through, and send approved requests to agents through **T3**.
 
-> **This page is for monō internal testers.** It holds Mo's downloadable installers only. There is no source code here.
+- **Mo** is the companion you talk to.
+- **monō** is the AI platform behind the conversation.
+- **T3** runs the connected agent work and keeps its conversations.
 
-## Download and install
+<p align="center">
+  <img src="docs/images/mo-states.png" alt="Mo listening, thinking, speaking and ready" width="100%">
+</p>
 
-1. Open the **[Releases](../../releases)** page and choose the newest Mo version.
-2. Download **mo-VERSION-arm64.dmg**. This is the installer: a disk image that opens like a small window.
-3. Open it and drag **Mo** onto the **Applications** folder.
-4. Open Mo from Applications. This build is not yet Apple-notarised, so macOS may stop the first open. Go to **System Settings → Privacy & Security**, find the message about Mo and choose **Open Anyway**.
-5. When asked, allow Mo the permissions it needs (microphone, and Accessibility for pasting dictated text).
+## Install in four steps
 
-**Needs:** a Mac with Apple Silicon (M1 or later). Intel Macs are not supported.
+| | |
+|---|---|
+| **1. Download** | Open the [latest release](https://github.com/YML87/mo-releases/releases/latest) and download **mo-VERSION-arm64.dmg**. |
+| **2. Drag** | Open the file and drag **Mo** onto the **Applications** folder. |
+| **3. Open** | Open Mo from Applications. This build isn't Apple-notarised yet, so the first time macOS may stop it. Go to **System Settings → Privacy & Security** and choose **Open Anyway**. |
+| **4. Allow** | When asked, allow the **Microphone**, and **Accessibility** so Mo can paste your dictated text. |
 
-**What the other files are:**
-
-- **mo-VERSION-arm64.zip**: the same app in a zip, used by Mo's own update check. You do not need it.
-- **latest-mac.yml** and **mo-release-receipt.json**: the checklist of file sizes and fingerprints Mo uses to confirm a download is genuine. You do not need them.
+> **After each update** you may need to allow Microphone and Accessibility again. That stops once Mo is signed with an Apple Developer ID.
 
 ## What works today
 
-- **Voice dictation.** Speak and turn your words into text in the app you are using. Mo appears in the dictation control.
-- **Text conversation with monō.** Use Mo’s chat to ask questions, develop ideas and think through your work. Dictation and AI chat are separate flows today, not a complete spoken conversation.
-- **Saved chat context.** Mo Desktop saves chats, summaries and your confirmed decisions to Mo Brain. The “Don’t save this chat” option turns off Mo’s chat saving.
-- **Project context.** The chat header displays the current project, open jobs and latest checkpoint recorded in Mo Brain. These are saved records, not a live check of the project.
-- **Approved work through T3.** Authorise Mo in your browser, then use its T3 panel to select a project and conversation. Review messages or agent requests before sending. Read replies, inspect reported activity and open the original conversation in T3.
-- **Update check.** In **Settings → System**, choose **Check for updates**. Mo looks only at this page's releases, only when you click, and checks the download before opening it. You then install the new version by hand.
+| | |
+|---|---|
+| 🎙️ **Voice dictation** | Speak and your words appear as text in the app you're using. |
+| 💬 **Chat with monō** | Ask questions, develop ideas and think your work through. Dictation and chat are separate today, not one spoken conversation. |
+| 🧠 **Saved context** | Chats, summaries and your confirmed decisions are saved to Mo Brain. Choose **Don't save this chat** to turn that off. |
+| 📁 **Project context** | The chat header shows the current project, open jobs and latest checkpoint from Mo Brain. These are saved records, not a live check. |
+| 🔗 **Work through T3** | Authorise Mo in your browser, pick a project and conversation, and review every message or agent request before it's sent. |
+| ⬆️ **Update check** | **Settings → System → Check for updates** looks only here, only when you click, and checks the download before opening it. You install it by hand. |
 
-## How the connection works
+<details>
+<summary><b>How the T3 connection works</b></summary>
 
-Mo remembers approved T3 access and connects automatically while both apps are running. Expired or revoked access needs authorisation again. Connection problems may need attention; permanent availability is not promised.
+<br>
 
-The installed workflow uses explicit T3 controls. Normal Mo chat does not independently start agents or send work. Agent requests from standalone Mo go to an existing monō conversation in T3 for coordination. A queued request is not proof that an agent has started.
+Mo remembers approved T3 access and connects automatically while both apps are running. Expired or revoked access needs authorising again. Connection problems may need attention; permanent availability is not promised.
 
-Mo records its integration requests, receipts and failures. It also displays the activity T3 reports, not every action on your computer. T3 keeps its own conversations even when Mo’s “Don’t save” option is on.
+Normal Mo chat never starts agents or sends work on its own. Agent requests go to an existing monō conversation in T3 for coordination, and a queued request is not proof an agent has started.
+
+Mo records its integration requests, receipts and failures, and shows the activity T3 reports, not every action on your computer. T3 keeps its own conversations even when **Don't save** is on.
+
+</details>
 
 ## Coming soon
 
-*These capabilities are not part of the accepted live workflow. Some are built candidates; others are planned.*
+| Feature | Status |
+|---|---|
+| **Chat-to-work handoff.** Ask, prepare a request, approve it once and track the result | Built and tested, not live yet |
+| **Start new work from Mo.** New T3 conversation or project, or open Terminal in a project folder | Built and tested, not live yet |
+| **Calendar connections.** Google Calendar and Microsoft calendars | Waiting on monō sign-in keys |
+| **Automatic project discovery.** Find and open the right project when the match is clear | Proposed |
+| **Company data access.** Find permitted information through monō's company connections | Needs wiring and testing |
+| **Screen awareness.** Help in context, with your permission | Not yet a working capability |
+| **Spoken conversation and computer actions.** Talk with Mo and let it carry out approved tasks | Not yet a working capability |
 
-- **Chat-to-work handoff.** Ask Mo, prepare a request, review it, approve it once and track the result. Built and tested; not installed or live-tested yet.
-- **Start new work from Mo.** Open a new T3 conversation, create a new T3 project, or open Terminal in a project folder. Built and tested; not installed or live-tested yet. Terminal opens in the folder only; Mo does not type or run commands.
-- **Calendar connections.** Connect Google Calendar and Microsoft calendars. Sign-in keys for monō are not set up yet, so these do not work today.
-- **Automatic project discovery.** Find the relevant project and conversations, open them and report status without picker clicks when the match is clear. Proposed, not built.
-- **Screen awareness.** Understand your on-screen activity with your permission and help in context. Not established as a working Mo capability.
-- **Company data access.** Find permitted information through monō’s company connections. Those connections still need wiring and testing in Mo.
-- **Spoken conversation and computer actions.** Talk with Mo and let it carry out approved tasks in your apps. Not established as a working Mo capability.
+<details>
+<summary><b>What are the other files on the release page?</b></summary>
+
+<br>
+
+- **mo-VERSION-arm64.zip**: the same app in a zip, used by Mo's own update check.
+- **latest-mac.yml** and **mo-release-receipt.json**: the sizes and fingerprints Mo uses to confirm a download is genuine.
+
+You only need the **.dmg**.
+
+</details>
+
+---
+
+<p align="center"><sub>MO · BY MONŌ AI · SYDNEY</sub></p>
