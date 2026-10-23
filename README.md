@@ -38,6 +38,31 @@ Mo is an AI work companion for your Mac. It brings **voice dictation** and **con
 
 > **After each update** you may need to allow Microphone and Accessibility again. That stops once Mo is signed with an Apple Developer ID.
 
+## Install with your agent
+
+**Skip the security warning.** If you use an AI coding agent (Claude Code, T3 or similar), paste this prompt into it. The agent downloads Mo with a Terminal command, which macOS doesn't flag, checks the file's fingerprint and puts Mo in Applications. Then **you** open Mo.
+
+```text
+Install the Mo desktop app for me from https://github.com/YML87/mo-releases.
+
+1. Get the latest release tag from
+   https://api.github.com/repos/YML87/mo-releases/releases/latest
+   (call the version without the "v" VERSION).
+2. In a new empty folder, use curl to download mo-VERSION-arm64.dmg and
+   mo-release-receipt.json from
+   https://github.com/YML87/mo-releases/releases/download/<tag>/
+3. Check the DMG's SHA-256 matches sha256["mo-VERSION-arm64.dmg"] in the receipt.
+   If it doesn't match, stop and tell me. Don't install anything.
+4. Quit Mo if it is running. If /Applications/mo.app exists, move it to the Trash.
+5. Mount the DMG read-only (hdiutil attach -nobrowse -readonly), copy mo.app into
+   /Applications with ditto, then detach the DMG and delete the download folder.
+6. Confirm with: codesign --verify --deep --strict /Applications/mo.app
+7. Don't open Mo yourself. Tell me to open it from Applications, so macOS gives
+   Mo (not you) its Microphone and Accessibility permissions.
+```
+
+> Mo isn't Apple-notarised yet, so this skips Apple's check rather than passing it. The fingerprint check still refuses a broken or swapped download. Use it only for Mo from this page.
+
 ## What works today
 
 | Feature | What it does |
