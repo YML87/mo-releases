@@ -1,5 +1,9 @@
 # Meet Mo
 
+### ⬇️ [Download the latest Mo for Mac](https://github.com/YML87/mo-releases/releases/latest)
+
+On that page, choose the file ending in **.dmg**. Apple Silicon Macs only (M1 or later).
+
 **Your work companion. Your connection to monō.**
 
 Mo is an AI work companion for your Mac. Mo Desktop brings voice dictation and conversation with monō into one app.
