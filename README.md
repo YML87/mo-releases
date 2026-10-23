@@ -29,7 +29,7 @@ Mo is an AI work companion for your Mac. It brings **voice dictation** and **con
 
 ## Install in four steps
 
-| | |
+| Step | What to do |
 |---|---|
 | **1. Download** | Open the [latest release](https://github.com/YML87/mo-releases/releases/latest) and download **mo-VERSION-arm64.dmg**. |
 | **2. Drag** | Open the file and drag **Mo** onto the **Applications** folder. |
@@ -40,7 +40,7 @@ Mo is an AI work companion for your Mac. It brings **voice dictation** and **con
 
 ## What works today
 
-| | |
+| Feature | What it does |
 |---|---|
 | 🎙️ **Voice dictation** | Speak and your words appear as text in the app you're using. |
 | 💬 **Chat with monō** | Ask questions, develop ideas and think your work through. Dictation and chat are separate today, not one spoken conversation. |
